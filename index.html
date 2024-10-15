@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise Birthday Greeting</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap');
+        body {
+            background-color: #ffebcd;
+            font-family: 'Luckiest Guy', cursive;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .confetti {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(circle, #ff69b4 4%, transparent 4%), radial-gradient(circle, #ffa07a 4%, transparent 4%), radial-gradient(circle, #ff6347 4%, transparent 4%);
+            background-size: 50px 50px;
+            background-position: 0 0, 25px 25px, 50px 50px;
+            opacity: 0.3;
+            z-index: -1;
+        }
+        .envelope {
+            width: 1000px;
+            height: 800px;
+            background-color: #ff69b4;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.4s ease-in-out;
+            border: 4px solid #ff1493;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .envelope::before, .envelope::after {
+            content: '';
+            position: absolute;
+            width: 650px;
+            height: 350px;
+            background-color: #ff4500;
+            border-radius: 0 0 15px 15px;
+            transition: transform 0.4s ease-in-out;
+        }
+        .envelope::before {
+            top: -350px;
+            transform: rotateX(180deg);
+        }
+        .envelope::after {
+            bottom: -350px;
+            transform: rotateX(-180deg);
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffe0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 50px;
+            border-radius: 15px;
+            text-align: center;
+            transform: translateY(100%);
+            opacity: 0;
+            transition: opacity 0.4s, transform 0.4s;
+            z-index: 1;
+            border: 4px dashed #ff1493;
+        }
+        .envelope.open .card {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .envelope.open::before {
+            transform: rotateX(0);
+            top: 0;
+        }
+        .envelope.open::after {
+            transform: rotateX(0);
+            bottom: 0;
+        }
+        .card h1 {
+            color: #ff6347;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+        .card p {
+            font-size: 1.8em;
+            color: #8b4513;
+            margin-bottom: 20px;
+        }
+        .card button {
+            padding: 12px 24px;
+            background-color: #ffa07a;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .card button:hover {
+            background-color: #ff4500;
+        }
+        .message {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #8b4513;
+            text-align: left;
+        }
+        .message ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .message ul li {
+            margin: 10px 0;
+        }
+        .message ul li:before {
+            content: "🎉";
+            margin-right: 10px;
+        }
+        .special-button {
+            margin-top: 20px;
+            padding: 12px 24px;
+            background-color: #ff4500;
+            color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .special-button:hover {
+            background-color: #ff6347;
+        }
+    </style>
+</head>
+<body>
+    <div class="confetti"></div>
+    <div class="envelope" onclick="openEnvelope()">
+        <div class="card">
+            <h1>🎂 Happy Birthday! 🎈</h1>
+            <h1>ORLA</h1>
+            <p>Surprise! 🎉 Wishing you a day as fabulous as you are! 🍰💖</p>
+            <button onclick="showMessage(event)">Why You're Awesome 😎</button>
+            <div class="message">
+                <ul>
+                    <li>Your kindness is contagious! 💖</li>
+                    <li>You can make anyone relax, even on a bad day! 😂</li>
+                    <li>You’re like a human sunshine! ☀️</li>
+                    <li>You are always Patient🕺</li>
+                    <li>Even coffee envies your energy! ☕️⚡️</li>
+                </ul>
+            </div>
+            <a href="round.html" class="special-button">To something more special</a>
+            <a href="song.html" class="special-button">Click for an Extra Surprise!</a>
+        </div>
+    </div>
+    <script>
+        function openEnvelope() {
+            document.querySelector('.envelope').classList.toggle('open');
+        }
+
+        function showMessage(event) {
+            event.stopPropagation(); // Prevent envelope from closing
+            const messageDiv = document.querySelector('.message');
+            messageDiv.style.display = messageDiv.style.display === 'block' ? 'none' : 'block';
+        }
+    </script>
+</body>
+</html>

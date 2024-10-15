@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Recommendations</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff7e5f, #feb47b);
+            font-family: Arial, sans-serif;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin: 0;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .card {
+            background: #fff;
+            color: #333;
+            border-radius: 15px;
+            padding: 20px;
+            width: 250px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .card h2 {
+            font-size: 1.6em;
+            margin: 10px 0;
+            color: #ff7e5f;
+        }
+        .card p {
+            font-size: 1em;
+            margin: 10px 0;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎶 Song Recommendations 🎶</h1>
+    <div class="container">
+        <div class="card">
+            <img src="birds.png" alt="Chill Vibes">
+            <h2>Birds of a Feather </h2>
+            <p>By Billie Eilish.</p>
+        </div>
+        <div class="card">
+            <img src="justlikethis.jpg" alt="Feel-Good Hits">
+            <h2>Something just like this</h2>
+            <p>By Cold play ft Chainsmokers</p>
+        </div>
+        <div class="card">
+            <img src="nuestra.jpeg" alt="Workout Boost">
+            <h2>Nuestra Cancion</h2>
+            <p> by Monsieur Perine.</p>
+        </div>
+        <div class="card">
+            <img src="jette.jpeg" alt="Romantic Tunes">
+            <h2>Je te laisserai des mots</h2>
+            <p>by Patrick Watson </p>
+        </div>
+        <div class="card">
+            <img src="secondbest.png" alt="Party Anthems">
+            <h2>Second best</h2>
+            <p>By Laufey</p>
+        </div>
+        <div class="card">
+            <img src="rose.jpeg" alt="Focus Beats">
+            <h2>Can i call you rose?</h2>
+            <p>Stay on track with these concentration-boosting tunes.</p>
+        </div>
+    </div>
+</body>
+</html>
